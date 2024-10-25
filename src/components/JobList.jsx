@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
-import JobCard from './Job_card';
+import JobCard from './Job_card.jsx';
 import "./css/JobList.css";
 
 function JobList({ url, textColor }) {

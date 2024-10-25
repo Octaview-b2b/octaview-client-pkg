@@ -1,6 +1,6 @@
 import React from 'react';
-import JobList from './components/JobList';
-import JobDetails from './components/Job_details';
+import JobList from './components/JobList.jsx';
+import JobDetails from './components/Job_details.jsx'; 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function OctaviewClient({ url, background, textColor }) {

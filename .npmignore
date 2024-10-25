@@ -1,0 +1,8 @@
+src/
+tests/
+.git/
+.DS_Store
+node_modules/
+README.md
+rollup.config.js
+babel.config.cjs
