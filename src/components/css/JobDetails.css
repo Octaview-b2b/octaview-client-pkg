@@ -1,0 +1,226 @@
+/* JobDetails.css */
+
+.job-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    position: relative;
+  }
+  
+  /* Header Section */
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    gap: 24px;
+  }
+  
+  .job-header-content {
+    flex: 1;
+  }
+  
+  .job-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 16px;
+  }
+  
+  .company-location {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4b5563;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: #6b7280;
+  }
+  
+  /* Quick Info Section */
+  .quick-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .info-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+  }
+  
+  .info-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-label {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  .info-value {
+    font-weight: 500;
+    color: #1f2937;
+  }
+  
+  /* Main Content */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .content-section {
+    margin-bottom: 24px;
+  }
+  
+  .content-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 16px;
+  }
+  
+  .content-section p {
+    color: #4b5563;
+    line-height: 1.6;
+  }
+  
+  /* Skills */
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .skill-tag {
+    background-color: #e5e7eb;
+    color: #374151;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+  
+  /* Lists */
+  .requirements-list,
+  .benefits-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .requirements-list li,
+  .benefits-list li {
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 12px;
+    color: #4b5563;
+  }
+  
+  .requirements-list li::before,
+  .benefits-list li::before {
+    content: "•";
+    position: absolute;
+    left: 8px;
+    color: #2563eb;
+  }
+  
+  /* Apply Button */
+  /* Apply Button */
+.apply-button {
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 150px; /* Limit width on larger screens */
+}
+
+.apply-button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px); /* Add subtle hover animation */
+}
+
+/* Mobile Apply Button */
+.mobile-apply-button {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-header {
+      flex-direction: column;
+  }
+
+  .job-title {
+      font-size: 24px;
+  }
+
+  .apply-button {
+      width: 100%; /* Full width on smaller screens */
+  }
+
+  .quick-info {
+      grid-template-columns: 1fr;
+  }
+
+  .mobile-apply-button {
+      display: block;
+  }
+
+  /* Add padding to prevent content from being hidden behind mobile apply button */
+  .job-details-container {
+      padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-details-container {
+      padding: 16px;
+  }
+
+  .company-location {
+      flex-direction: column;
+      gap: 12px;
+  }
+
+  .content-section h2 {
+      font-size: 18px;
+  }
+}
+
+  
+  /* Animation for hover states */
+  .apply-button,
+  .skill-tag {
+    transition: transform 0.2s ease;
+  }
+  
+  .apply-button:hover,
+  .skill-tag:hover {
+    transform: translateY(-1px);
+  }

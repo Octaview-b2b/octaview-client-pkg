@@ -1,0 +1,117 @@
+/* Container for the entire grid */
+.job-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive grid breakpoints */
+  @media (min-width: 768px) {
+    .job-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .job-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Individual job card styling */
+  .job-card {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .job-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Job card header */
+  .job-card-header {
+    margin-bottom: 16px;
+  }
+  
+  .job-id {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .job-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+  
+  /* Job details section */
+  .job-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4b5563;
+  }
+  
+  .detail-item svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Icons styling */
+  .icon {
+    width: 16px;
+    height: 16px;
+    color: #6b7280;
+  }
+  
+  /* Apply button */
+  .apply-button {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .apply-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Location text */
+  .location-text {
+    font-size: 14px;
+  }
+  
+  /* Utility classes */
+  .text-gray {
+    color: #6b7280;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  /* Reset default margins */
+  h2, p {
+    margin: 0;
+  }
