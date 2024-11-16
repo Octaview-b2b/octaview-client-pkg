@@ -51,6 +51,57 @@
           "city": "Mumbai",
           "description": "We are looking for a talented Digital Marketing Specialist to join our team. You will be responsible for developing and executing marketing campaigns.",
           "hidden": false
+        },    {
+          "id": "job1",
+          "job_title": "Software Engineer",
+          "skills": "Python, JavaScript, React",
+          "job_role": "Full Stack Developer",
+          "min_salary": 50000,
+          "max_salary": 80000,
+          "job_level": "Mid-Level",
+          "location": "Koonammavu, Kerala, India",
+          "city": "Koonammavu",
+          "description": "We are looking for a talented Full Stack Developer to join our team. You will be responsible for designing, developing, and maintaining our web applications.",
+          "hidden": false
+        },
+        {
+          "id": "job2",
+          "job_title": "Data Scientist",
+          "skills": "Python, SQL, Machine Learning",
+          "job_role": "Data Analyst",
+          "min_salary": 60000,
+          "max_salary": 90000,
+          "job_level": "Senior",
+          "location": "Kochi, Kerala, India",
+          "city": "Kochi",
+          "description": "We are looking for a talented Data Scientist to join our team. You will be responsible for analyzing large datasets and developing machine learning models.",
+          "hidden": false
+        },
+        {
+          "id": "job3",
+          "job_title": "UI/UX Designer",
+          "skills": "Figma, Adobe XD, Sketch",
+          "job_role": "Product Designer",
+          "min_salary": 40000,
+          "max_salary": 60000,
+          "job_level": "Junior",
+          "location": "Bangalore, Karnataka, India",
+          "city": "Bangalore",
+          "description": "We are looking for a talented UI/UX Designer to join our team. You will be responsible for designing user-friendly interfaces for our products.",
+          "hidden": false
+        },
+        {
+          "id": "job4",
+          "job_title": "Digital Marketing Specialist",
+          "skills": "SEO, SEM, Social Media Marketing",
+          "job_role": "Marketing Manager",
+          "min_salary": 35000,
+          "max_salary": 55000,
+          "job_level": "Entry-Level",
+          "location": "Mumbai, Maharashtra, India",
+          "city": "Mumbai",
+          "description": "We are looking for a talented Digital Marketing Specialist to join our team. You will be responsible for developing and executing marketing campaigns.",
+          "hidden": false
         }
       ]
 }
