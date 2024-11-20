@@ -8,8 +8,8 @@ function JobList({ url, textColor }) {
   const [jobs, setJobs] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1); // Pagination state
-  const [jobsPerPage] = useState(2); // Set number of jobs per page
+  const [currentPage, setCurrentPage] = useState(1); 
+  const [jobsPerPage] = useState(2); 
   const navigate = useNavigate();
 
   useEffect(() => {
