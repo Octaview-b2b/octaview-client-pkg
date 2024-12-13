@@ -7,13 +7,12 @@ function JobApplicationForm() {
   const { id } = useParams();
   const { url, textColor, buttonColor } = useAppContext();
   const [formData, setFormData] = useState({
-    full_Name: '',
+    fullName: '',   // Renamed to match backend
     DOB: '',
     linkedin: '',
-    profile: '',
     country: '',
     email: '',
-    contact_no: '',
+    contactNo: '',  // Renamed to match backend
     github: '',
     resume: null, // For file input
   });
@@ -22,30 +21,31 @@ function JobApplicationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     const formDataToSubmit = new FormData();
-
-    // Append the data to FormData
+  
+    // Loop through formData object and append all key-value pairs dynamically
     for (const key in formData) {
-      formDataToSubmit.append(key, formData[key]);
+      if (formData[key]) {
+        formDataToSubmit.append(key, formData[key]);
+      }
     }
-
+  
     try {
-      const res = await fetch(`${url}/${id}/apply`, {
+      const res = await fetch(`${url}/apply/${id}`, {
         method: 'POST',
-        body: formDataToSubmit, 
+        body: formDataToSubmit,
       });
-
+  
       if (!res.ok) throw new Error('Error submitting application');
       alert('Application submitted successfully');
       setFormData({
-        full_Name: '',
+        fullName: '',
         DOB: '',
         linkedin: '',
-        profile: '',
         country: '',
         email: '',
-        contact_no: '',
+        contactNo: '',
         github: '',
         resume: null,
       });
@@ -56,6 +56,7 @@ function JobApplicationForm() {
       setIsSubmitting(false);
     }
   };
+  
 
   const handleFileChange = (e) => {
     setFormData({
@@ -72,13 +73,13 @@ function JobApplicationForm() {
     >
       <h2>Apply for Job</h2>
 
-      <label htmlFor="full_Name">Your Name</label>
+      <label htmlFor="fullName">Your Name</label>
       <input
-        id="full_Name"
+        id="fullName"
         type="text"
         placeholder="Your Full Name"
-        value={formData.full_Name}
-        onChange={(e) => setFormData({ ...formData, full_Name: e.target.value })}
+        value={formData.fullName}
+        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
         required
       />
 
@@ -98,16 +99,6 @@ function JobApplicationForm() {
         placeholder="Your LinkedIn URL"
         value={formData.linkedin}
         onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
-        required
-      />
-
-      <label htmlFor="profile">Profile</label>
-      <input
-        id="profile"
-        type="text"
-        placeholder="Your Profile"
-        value={formData.profile}
-        onChange={(e) => setFormData({ ...formData, profile: e.target.value })}
         required
       />
 
@@ -131,13 +122,13 @@ function JobApplicationForm() {
         required
       />
 
-      <label htmlFor="contact_no">Phone Number</label>
+      <label htmlFor="contactNo">Phone Number</label>
       <input
-        id="contact_no"
+        id="contactNo"
         type="tel"
         placeholder="Your Phone Number"
-        value={formData.contact_no}
-        onChange={(e) => setFormData({ ...formData, contact_no: e.target.value })}
+        value={formData.contactNo}
+        onChange={(e) => setFormData({ ...formData, contactNo: e.target.value })}
         required
       />
 
@@ -151,10 +142,11 @@ function JobApplicationForm() {
         required
       />
 
-      <label htmlFor="cv">Resume</label>
+      <label htmlFor="resume">Resume</label>
       <input
-        id="cv"
+        id="resume"
         type="file"
+        name="resume"
         onChange={handleFileChange}
         required
       />

@@ -5,9 +5,9 @@ import JobList from './components/JobList';
 import JobDetails from './components/Job_details';
 import JobApplicationForm from './components/Job_Form';
 
-function OctaviewClient({ url, background, textColor, buttonColor,api }) {
+function OctaviewClient({ url, background, textColor, buttonColor,api, userId }) {
   return (
-    <AppProvider url={url} background={background} textColor={textColor} buttonColor={buttonColor} api={api}>
+    <AppProvider url={url} background={background} textColor={textColor} buttonColor={buttonColor} api={api} userId={userId}>
       <div style={{ background, color: textColor }}>
         <BrowserRouter>
           <Routes>

@@ -6,7 +6,7 @@ import JobCard from "./Job_card";
 import "./css/JobList.css";
 
 function JobList() {
-  const { url, textColor } = useAppContext(); // URL and text color from context
+  const { url, textColor,userId } = useAppContext(); // URL and text color from context
   const [allJobs, setAllJobs] = useState([]); // All jobs fetched from server
   const [filteredJobs, setFilteredJobs] = useState([]); // Jobs after search filter
   const [searchQuery, setSearchQuery] = useState(""); // Search query
@@ -19,8 +19,7 @@ function JobList() {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        // Fetch jobs from the server
-        const res = await fetch(`${url}`);
+        const res = await fetch(`${url}/${userId}`);
         const data = await res.json();
 
         setAllJobs(data.jobs || data.results); // Server returns jobs or results array
