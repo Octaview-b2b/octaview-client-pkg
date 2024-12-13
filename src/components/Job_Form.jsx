@@ -14,7 +14,6 @@ function JobApplicationForm() {
     country: '',
     email: '',
     contact_no: '',
-    status: {}, // Can be an object, adjust this according to your logic
     github: '',
     resume: null, // For file input
   });
@@ -34,7 +33,7 @@ function JobApplicationForm() {
     try {
       const res = await fetch(`${url}/${id}/apply`, {
         method: 'POST',
-        body: formDataToSubmit, // Sending FormData for file upload
+        body: formDataToSubmit, 
       });
 
       if (!res.ok) throw new Error('Error submitting application');
@@ -47,7 +46,6 @@ function JobApplicationForm() {
         country: '',
         email: '',
         contact_no: '',
-        status: {},
         github: '',
         resume: null,
       });
@@ -160,7 +158,6 @@ function JobApplicationForm() {
         onChange={handleFileChange}
         required
       />
-
 
       <button
         type="submit"
