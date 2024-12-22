@@ -51,7 +51,7 @@ function JobApplicationForm() {
       });
     } catch (error) {
       console.error(error);
-      alert('Failed to submit the application.');
+      alert(error.message);
     } finally {
       setIsSubmitting(false);
     }
