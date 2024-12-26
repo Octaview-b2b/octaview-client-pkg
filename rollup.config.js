@@ -13,7 +13,9 @@ export default {
     exports: 'auto', // Explicitly set exports mode
   },
   plugins: [
-    resolve(),
+    resolve({
+      extensions: ['.js', '.jsx'],  // Add '.jsx' here to resolve JSX files
+    }),
     commonjs(),
     postcss(),
     babel({
