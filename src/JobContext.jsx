@@ -2,9 +2,9 @@ import React, { createContext, useContext } from 'react';
 
 const AppContext = createContext();
 
-export const AppProvider = ({ children, url, background, textColor, buttonColor, api, userId }) => {
+export const AppProvider = ({ children, background, textColor, buttonColor, api, userId }) => {
   return (
-    <AppContext.Provider value={{ url, background, textColor, buttonColor, api, userId }}>
+    <AppContext.Provider value={{  background, textColor, buttonColor, api, userId }}>
       {children}
     </AppContext.Provider>
   );

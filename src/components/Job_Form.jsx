@@ -6,7 +6,7 @@ import './css/JobForm.css';
 
 function JobApplicationForm() {
   const { id } = useParams(); // Extracting the job ID from the URL
-  const { url, textColor, buttonColor } = useAppContext(); // Accessing the URL and colors from context
+  const { textColor, buttonColor } = useAppContext(); // Accessing the URL and colors from context
   const [formData, setFormData] = useState({
     fullName: '',
     DOB: '',
@@ -33,7 +33,7 @@ function JobApplicationForm() {
     }
 
     try {
-      const res = await fetch(`${url}/apply/${id}`, {
+      const res = await fetch(`http://localhost:5000/api/jobs/ext/apply/${id}`, {
         method: 'POST',
         body: formDataToSubmit,
       });
