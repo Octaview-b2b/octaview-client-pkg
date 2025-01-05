@@ -14,12 +14,13 @@ function JobList() {
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [jobsPerPage] = useState(10); // Number of jobs per page
   const navigate = useNavigate();
+  const url = `http://localhost:5000/api/jobs/ext/`
 
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/jobs/ext/${userId}`);
+        const res = await fetch(`${url}${userId}`);
         const data = await res.json();
 
         setAllJobs(data.jobs || data.results); // Server returns jobs or results array
