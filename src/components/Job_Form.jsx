@@ -6,7 +6,7 @@ import './css/JobForm.css';
 
 function JobApplicationForm() {
   const { id } = useParams(); // Extracting the job ID from the URL
-  const { textColor, buttonColor } = useAppContext(); // Accessing the URL and colors from context
+  const { textColor, buttonColor, api, userId } = useAppContext(); // Accessing the URL, colors, and API key from context
   const [formData, setFormData] = useState({
     fullName: '',
     DOB: '',
@@ -19,6 +19,7 @@ function JobApplicationForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false); // Track the submission state
   const [alert, setAlert] = useState({ message: '', type: '', visible: false }); // Alert state
+console.log('id : ',id);
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -33,8 +34,11 @@ function JobApplicationForm() {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/jobs/ext/apply/${id}`, {
+      const res = await fetch(`http://localhost:5000/api/jobs/ext/apply/${userId}/${id}`, {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${api}`,
+        },
         body: formDataToSubmit,
       });
 

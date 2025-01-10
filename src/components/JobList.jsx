@@ -4,9 +4,10 @@ import { Search } from "lucide-react";
 import { useAppContext } from "../JobContext";
 import JobCard from "./Job_card";
 import "./css/JobList.css";
+import { use } from "react";
 
 function JobList() {
-  const {  textColor,userId } = useAppContext(); // URL and text color from context
+  const {  textColor,userId,api } = useAppContext(); // URL and text color from context
   const [allJobs, setAllJobs] = useState([]); // All jobs fetched from server
   const [filteredJobs, setFilteredJobs] = useState([]); // Jobs after search filter
   const [searchQuery, setSearchQuery] = useState(""); // Search query
@@ -15,14 +16,22 @@ function JobList() {
   const [jobsPerPage] = useState(10); // Number of jobs per page
   const navigate = useNavigate();
   const url = `http://localhost:5000/api/jobs/ext/`
-
+  
+  
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${url}${userId}`);
+        const res = await fetch(`${url}${userId}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${api}`,  // Pass the API key here
+            'Content-Type': 'application/json', // Adjust based on your API requirements
+          },
+        });
+  
         const data = await res.json();
-
+        
         setAllJobs(data.jobs || data.results); // Server returns jobs or results array
         setFilteredJobs(data.jobs || data.results); // Initialize with all jobs
       } catch (error) {
@@ -32,7 +41,8 @@ function JobList() {
       }
     };
     fetchJobs();
-  }, [url]);
+  }, [url, userId, api]);  // Ensure `api` is included as a dependency
+  
 
   // Handle search input change
   const handleSearch = (query) => {
