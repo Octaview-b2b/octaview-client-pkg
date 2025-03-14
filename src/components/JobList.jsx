@@ -15,7 +15,7 @@ function JobList() {
   const [currentPage, setCurrentPage] = useState(1); // Current page
   const [jobsPerPage] = useState(10); // Number of jobs per page
   const navigate = useNavigate();
-  const url = `http://localhost:5000/api/jobs/ext/`
+  const url = `https://server.octaview.tech/api/jobs/ext/`
   
   
   useEffect(() => {

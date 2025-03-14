@@ -34,7 +34,7 @@ console.log('id : ',id);
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/jobs/ext/apply/${userId}/${id}`, {
+      const res = await fetch(`https://server.octaview.tech/api/jobs/ext/apply/${userId}/${id}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${api}`,
