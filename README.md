@@ -51,7 +51,6 @@ import OctaviewClient from 'octaview-client';
 
 function App() {
   const props = {
-    url: "http://localhost:3030/jobs",
     background: "#f0f0f0",
     textColor: "#000000",
     buttonColor: "#007bff",
